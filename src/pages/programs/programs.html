@@ -1,0 +1,41 @@
+<ion-header >
+
+    <ion-navbar>
+        <ion-buttons left>
+            <button ion-button icon-only >
+              <ion-icon name="search"></ion-icon>
+            </button>
+          </ion-buttons>
+      <ion-title class="center">Programs</ion-title>
+  
+      <ion-buttons right>
+        <button ion-button round clear (click)="goToAccountPage()" >
+          <ion-item  class="transparent" >
+              <ion-avatar item-end  >
+                  <!-- <img src="{{photo_url}}"> -->
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png"  class="right">
+                </ion-avatar>
+          </ion-item>
+  
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  
+  </ion-header>
+
+<ion-content class="card-background-page">
+    <ion-segment color="dark">
+        <ion-segment-button value="camera">
+          Courses
+        </ion-segment-button>
+        <ion-segment-button value="bookmark">
+          Tracks
+        </ion-segment-button>
+      </ion-segment>
+      <ion-card>
+          <img src="https://www.sti.edu/img/banners/ict.jpg"/>
+          <div class="card-title">São Paulo</div>
+          <div class="card-subtitle">41 Listings</div>
+        </ion-card>
+
+</ion-content>
