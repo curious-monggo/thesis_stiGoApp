@@ -1,2 +1,2 @@
 # thesis_stiGoApp
-A ionic app
+An ionic app
