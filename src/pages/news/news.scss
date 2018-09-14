@@ -30,6 +30,23 @@ page-news {
         max-height: 30px !important; //any size
     }
     .card{
-        border-radius: 5px;
+        border-radius: 8px;
+    }
+    .card-img-news {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        min-height: 250px;
+
+     }
+     @media only screen and (min-width: 400px) {
+        .card-img-news {
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            min-height: 250px;
+            max-height: 500px;
+    
+         }
     }
 }

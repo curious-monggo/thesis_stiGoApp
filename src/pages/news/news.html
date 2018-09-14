@@ -24,19 +24,23 @@
   </ion-header>
 
 <ion-content >
- <ion-card class="card">
-  <img src="https://via.placeholder.com/350x150"/>
-  <ion-card-content>
-    <ion-card-title>
-      Nine Inch Nails Live
-    </ion-card-title>
-      <p>
-        The most popular industrial group ever, and largely
-        responsible for bringing the music to a mass audience.
-      </p>
-    </ion-card-content>
-  </ion-card>
-  <ion-card class="card">
+    <ion-card (click)="openNewsDetailPage(newsDocument.id)"
+    class="card" *ngFor="let newsDocument of newsCollection">
+        <ion-item>
+            <ion-avatar item-start>
+              <img src="{{newsDocument.news_author_photo_url}}">
+            </ion-avatar>
+            <h2>{{newsDocument.news_author_name}}</h2>
+            <p>{{newsDocument.news_timestamp_post_created?.toDate() | date: 'medium' }}</p>
+          </ion-item>
+        <div class="card-img-news" [style.background-image]="'url(' + newsDocument.news_photo_url + ')'"></div>
+        <ion-card-content>
+          <p>
+              {{newsDocument.news_content}}
+          </p>  
+        </ion-card-content>
+    </ion-card>
+  <!-- <ion-card class="card">
       <img src="https://via.placeholder.com/350x150"/>
       <ion-card-content>
         <ion-card-title>
@@ -47,5 +51,5 @@
             responsible for bringing the music to a mass audience.
           </p>
         </ion-card-content>
-      </ion-card>  
+      </ion-card>   -->
 </ion-content>

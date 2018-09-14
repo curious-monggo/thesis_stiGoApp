@@ -27,61 +27,47 @@
 <ion-content>
   <!-- <h4>Welcome back, {{displayName}}</h4>
   <br> -->
-  <h3>Latest News</h3>
-  <ion-scroll class="scroll-news" scrollX="true" direction="x">
-      <ion-card class="card-news" >
-          <img src="https://images.pexels.com/photos/68147/waterfall-thac-dray-nur-buon-me-thuot-daklak-68147.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940https://www.sti.edu/img/banners/tourism.jpg"/>
+  <h3>News</h3>
+  <ion-scroll class="scroll-news" scrollX="true" direction="x" >
+    
+      <ion-card  (click)="openNewsDetailPage(newsDocument.id)"
+      *ngFor="let newsDocument of latestNewsCollection"
+      class="card">
+          <div class="card-img-news" [style.background-image]="'url(' + newsDocument.news_photo_url + ')'"></div>
           <ion-card-content>
             <p>
-              Lorem ipsum dolor amet title
+               {{ newsDocument.news_content }}
             </p>  
           </ion-card-content>
-        </ion-card>
-      <ion-card class="card-news" >
-          <img src="https://www.sti.edu/img/banners/tourism.jpg"/>
-          <ion-card-content>
-            <p>
-              Lorem ipsum dolor amet title
-            </p>  
-          </ion-card-content>
-        </ion-card>
+      </ion-card>
   </ion-scroll>
-  <h3>Latest Programs added</h3>
-  <ion-scroll class="scroll-events" scrollX="true" direction="x">
-      <ion-card class="card-events" >
-          <img src="https://www.sti.edu/img/banners/tourism.jpg"/>
-          <ion-card-content>
-            <p>
-              Lorem ipsum dolor amet title
-            </p>  
-          </ion-card-content>
-        </ion-card>
-      <ion-card class="card-events" >
-          <img src="https://www.sti.edu/img/banners/tourism.jpg"/>
-          <ion-card-content>
-            <p>
-              Lorem ipsum dolor amet title
-            </p>  
-          </ion-card-content>
-        </ion-card>
+  
+  <h3>Programs</h3>
+  <ion-scroll class="scroll-programs" scrollX="true" direction="x">
+    <ion-card class="card">
+      <div class="card-img-programs" style="background-image:url('https://www.sti.edu/img/banners/tourism.jpg')"></div>
+      <ion-card-content>
+        <p>
+           Lorem ipsum dolor amet title
+        </p>  
+      </ion-card-content>
+  </ion-card>
+  <ion-card class="card">
+    <div class="card-img-programs" style="background-image:url('https://www.sti.edu/img/banners/tourism.jpg')"></div>
+    <ion-card-content>
+      <p>
+         Lorem ipsum dolor amet title
+      </p>  
+    </ion-card-content>
+</ion-card>
   </ion-scroll>
   <h3>Latest Events</h3>
-  <ion-scroll class="scroll-news" scrollX="true" direction="x">
-      <ion-card class="card-news" >
-          <img src="https://loremflickr.com/320/240/cat/all"/>
-          <ion-card-content>
-            <p>
-              Lorem ipsum dolor amet title
-            </p>  
-          </ion-card-content>
-        </ion-card>
-      <ion-card class="card-news" >
-          <img src="https://picsum.photos/200/300/?random"/>
-          <ion-card-content>
-            <p>
-              Lorem ipsum dolor amet title
-            </p>  
-          </ion-card-content>
-        </ion-card>
+  <ion-scroll class="scroll-events" scrollX="true" direction="x">
+    <ion-card class="card">
+      <div class="card-img-events" style="background-image:url('https://www.sti.edu/img/banners/tourism.jpg')"></div>
+  </ion-card>
+  <ion-card class="card">
+    <div class="card-img-events" style="background-image:url('https://www.sti.edu/img/banners/tourism.jpg')"></div>
+</ion-card>
   </ion-scroll>
 </ion-content>

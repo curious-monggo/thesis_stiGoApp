@@ -1,4 +1,3 @@
-
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -8,7 +7,7 @@ import { NewsProvider } from './../../providers/news/news';
 //model
 import { News } from './../../models/news/news';
 /**
- * Generated class for the NewsPage page.
+ * Generated class for the NewsDetailPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -16,30 +15,32 @@ import { News } from './../../models/news/news';
 
 @IonicPage()
 @Component({
-  selector: 'page-news',
-  templateUrl: 'news.html',
+  selector: 'page-news-detail',
+  templateUrl: 'news-detail.html',
 })
-export class NewsPage {
-  newsCollection:News[];
+export class NewsDetailPage {
+  
+  newsDocument:News;
   newsDocumentId;
 
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
     private newsProvider: NewsProvider
+    
     ) {
   }
 
   ionViewDidLoad() {
-    this.newsProvider.getNewsCollection().subscribe(newsCollection => {
-      this.newsCollection = newsCollection;
-    });
+    this.newsDocumentId = this.navParams.get('id');
+    this.getNewsDocument(this.newsDocumentId);
   }
 
-  openNewsDetailPage(newsDocumentId){
-    console.log(newsDocumentId);
-    this.navCtrl.push('NewsDetailPage', {
-      id:newsDocumentId
+  getNewsDocument(newsDocumentId){
+    this.newsProvider.getNewsDocument(newsDocumentId).subscribe(newsDocument => {
+      this.newsDocument = newsDocument;
+    }, error => {
+      this.navCtrl.pop();
     });
   }
 

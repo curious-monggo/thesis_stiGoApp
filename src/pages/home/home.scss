@@ -1,6 +1,9 @@
 page-home {
     h3{
-        margin-left: 16px
+        margin-left: 12px;
+        margin-bottom: 0;
+        font-size: 2.3rem;
+        
     }
     .transparent {
         border-color: rgba(0, 0, 0, 0);
@@ -31,60 +34,80 @@ page-home {
         max-width: 30px !important;  //any size
         max-height: 30px !important; //any size
     }
-    .card-news{
+    .card{
         display: inline-block;
-        border-radius: 5px;
-        width:100% !important;
-        height:90% !important;
-        // min-width: 300px !important;
-        // min-height: 300px!important;
-        max-width: 300px !important;
-        max-height: 300px!important;
-        margin-left:16px;
-        margin-right:0px;
-        // margin-right:8px;
-        // margin-bottom:8px;
-        
+        border-radius: 8px;
     }
-
     .scroll-news{
         white-space: nowrap;
-        height: 320px !important;
-    //  /   max-height: 500px!important;
-        // margin-left:8px;
-        
-        
-        // overflow-y: hidden;
-    }
-    .card-events{
-        display: inline-block;
-        border-radius: 5px;
-        width:100% !important;
-        height:90% !important;
-        max-width: 150px !important;
-        max-height: 150px!important;
-        margin-left:16px;
-        margin-right:0px;
-        
+        height: 270px;
+        max-height: 270px !important;
     }
     .scroll-events{
         white-space: nowrap;
-        height: 180px !important;
-        // overflow-y: hidden;
+        height: 240px;
+        max-height: 240px !important;
+    }
+    .scroll-programs{
+        white-space: nowrap;
+        height: 270px;
+        max-height: 270px !important;
     }
 
-    // .card {
-    //     border-radius: 15px;
-    //     width:90% !important;
-    //     // height : 55% !important;
 
+    .card-img-news {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        height: 200px;
 
-        
-    //     // max-width: 90% !important;  //any size
-    //     // max-height: 45% !important; //any size
-    // }
-    // .card img {
-    //     width:100% !important;
-    //     height : 55% !important;
-    // }
+     }
+     .card-img-events {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        height: 220px;
+     }
+     .card-img-programs {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        height: 200px;
+     }
+     @media only screen and (min-width: 400px) {
+        .scroll-news{
+            white-space: nowrap;
+            height: 500px;
+            max-height: 500px !important;
+        }
+        .scroll-events{
+            white-space: nowrap;
+            height: 390px;
+            max-height: 390px !important;
+        }
+        .scroll-programs{
+            white-space: nowrap;
+            height: 425px;
+            max-height: 425px !important;
+        }
+        .card-img-news {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            min-height: 360px;
+    
+         }
+         .card-img-events {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            height: 360px;
+         }
+         .card-img-programs {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            height: 360px;
+         }
+    }
 }
