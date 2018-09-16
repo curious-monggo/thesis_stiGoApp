@@ -13,6 +13,11 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { NewsProvider } from '../providers/news/news';
+import { CourseProvider } from '../providers/course/course';
+import { StrandProvider } from '../providers/strand/strand';
+
+//browser
+import { InAppBrowser } from '@ionic-native/in-app-browser'
 
 export const firebaseConfig = {
   apiKey: "AIzaSyD6Rg5ux3fQi3OrwrWCHAEipaxrk3hB7EY",
@@ -47,6 +52,9 @@ export const firebaseConfig = {
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AngularFirestore,
     NewsProvider,
+    CourseProvider,
+    StrandProvider,
+    InAppBrowser
   ]
 })
 export class AppModule {}

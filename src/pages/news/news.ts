@@ -31,6 +31,10 @@ export class NewsPage {
   }
 
   ionViewDidLoad() {
+    this.getNewsCollection();
+  }
+
+  getNewsCollection() {
     this.newsProvider.getNewsCollection().subscribe(newsCollection => {
       this.newsCollection = newsCollection;
     });

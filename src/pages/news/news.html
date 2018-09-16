@@ -1,6 +1,6 @@
 <ion-header >
 
-    <ion-navbar>
+    <ion-navbar color="googleWhite">
         <ion-buttons left>
             <button ion-button icon-only >
               <ion-icon name="search"></ion-icon>
@@ -36,7 +36,7 @@
         <div class="card-img-news" [style.background-image]="'url(' + newsDocument.news_photo_url + ')'"></div>
         <ion-card-content>
           <p>
-              {{newsDocument.news_content}}
+              {{newsDocument.news_title| slice: 0: 145}} ...
           </p>  
         </ion-card-content>
     </ion-card>

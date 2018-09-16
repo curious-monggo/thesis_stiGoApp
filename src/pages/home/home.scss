@@ -38,6 +38,7 @@ page-home {
         display: inline-block;
         border-radius: 8px;
     }
+    
     .scroll-news{
         white-space: nowrap;
         height: 270px;
@@ -45,16 +46,20 @@ page-home {
     }
     .scroll-events{
         white-space: nowrap;
-        height: 240px;
-        max-height: 240px !important;
+        height: 320px;
+        max-height: 320px !important;
     }
     .scroll-programs{
         white-space: nowrap;
-        height: 270px;
-        max-height: 270px !important;
+        height: 220px;
+        max-height: 220px !important;
+        //margin-right:2px;
     }
 
-
+    .small{
+        width:180px;
+        margin-right:4px;
+    }
     .card-img-news {
         background-size: cover;
         background-repeat: no-repeat;
@@ -66,13 +71,14 @@ page-home {
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
-        height: 220px;
+        height: 300px;
      }
      .card-img-programs {
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
-        height: 200px;
+        
+        height: 150px;
      }
      @media only screen and (min-width: 400px) {
         .scroll-news{

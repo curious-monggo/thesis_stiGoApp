@@ -34,7 +34,7 @@ export class NewsProvider {
         const data = a.payload.doc.data() as News;
         const id = a.payload.doc.id;
         return { id, ...data };
-      }))
+      })),
     );
     return this.newsCollection;
     // console.log(this.newsList);
@@ -47,7 +47,7 @@ export class NewsProvider {
         const data = a.payload.doc.data() as News;
         const id = a.payload.doc.id;
         return { id, ...data };
-      }))
+      })),
     );
     return newsCollection;
     // console.log(this.newsList);

@@ -1,6 +1,6 @@
 <ion-header >
 
-  <ion-navbar>
+  <ion-navbar color="googleWhite">
       <ion-buttons left>
           <button ion-button icon-only >
             <ion-icon name="search"></ion-icon>
@@ -36,7 +36,7 @@
           <div class="card-img-news" [style.background-image]="'url(' + newsDocument.news_photo_url + ')'"></div>
           <ion-card-content>
             <p>
-               {{ newsDocument.news_content }}
+               {{ newsDocument.news_title | slice: 0: 145}} ...
             </p>  
           </ion-card-content>
       </ion-card>
@@ -44,7 +44,7 @@
   
   <h3>Programs</h3>
   <ion-scroll class="scroll-programs" scrollX="true" direction="x">
-    <ion-card class="card">
+    <ion-card class="card small">
       <div class="card-img-programs" style="background-image:url('https://www.sti.edu/img/banners/tourism.jpg')"></div>
       <ion-card-content>
         <p>
@@ -52,7 +52,7 @@
         </p>  
       </ion-card-content>
   </ion-card>
-  <ion-card class="card">
+  <ion-card class="card small">
     <div class="card-img-programs" style="background-image:url('https://www.sti.edu/img/banners/tourism.jpg')"></div>
     <ion-card-content>
       <p>

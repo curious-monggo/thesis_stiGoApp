@@ -1,4 +1,8 @@
 page-programs {
+    .overlay{
+        filter: blur(0.4px);
+    }
+    
 
     .transparent {
         border-color: rgba(0, 0, 0, 0);
@@ -35,9 +39,16 @@ page-programs {
           position: relative;
           text-align: center;
         }
-        ion-card img {
-          filter: blur(0.5px);
+        ion-card .img{
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            height: 260px;   
+
         }
+        // ion-card img {
+        //   filter: blur(0.5px);
+        // }
 
         // // ion-card img div{
         //     -webkit-text-stroke: 2px red;
