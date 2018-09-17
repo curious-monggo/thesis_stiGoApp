@@ -37,6 +37,15 @@ page-events {
         ion-card img {
           filter: blur(0.5px);
         }
+        .card{
+          border-radius: 8px;
+      }
+        .card-img-event {
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center center;
+          min-height: 400px;
+        }
 
         // // ion-card img div{
         //     -webkit-text-stroke: 2px red;
@@ -44,9 +53,10 @@ page-events {
       
         .card-title {
           position: absolute;
-          top: 85%;
+          bottom: 2%;
+          left:5%;
           font-size: 2.0em;
-          width: 100%;
+          // width: 100%;
           font-weight: bold;
           color: #fff;
         }
@@ -54,30 +64,12 @@ page-events {
         .card-subtitle {
           font-size: 1.0em;
           position: absolute;
-          top: 81%;
-          width: 100%;
+          bottom: 10%;
+          left:5%;
+          // width: 100%;
           color: #fff;
         }
       
       }
-      .avatars {
-        display: inline-flex;
-        flex-direction: row-reverse;
-        padding-left:50px;
-      }
-      
-      .avatar {
-        margin-left: -25px;
-        position: relative;
-        border:1px solid #fff;
-        border-radius: 50%;
-        overflow:hidden;
-        width:50px;
-        height:50px;
-      }
-      
-      .avatar img {
-        width:50px;
-        height:50px;
-      }
+
 }

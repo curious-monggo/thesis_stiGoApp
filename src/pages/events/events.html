@@ -27,14 +27,11 @@
 
 
 <ion-content class="card-background-page">
-    <ion-card>
-        <img src="https://www.sti.edu/img/banners/tourism.jpg"/>
+    <ion-card (click)="goToEventDetail()">
+        <!-- <img src="https://www.sti.edu/img/banners/tourism.jpg"/> -->
+        <div class="card-img-event" [style.background-image]="'url(' + 'https://www.sti.edu/img/banners/tourism.jpg' + ')'"></div>
         <div class="card-title">Event name</div>
-        <div class="card-subtitle">June 12, 2018</div>
-          <span class="avatar">
-                <img   src="https://lorempixel.com/50/50/">
-            </span>
-
+        <div class="card-subtitle">Address, June 12, 2018</div>
       </ion-card>
 
 </ion-content>

@@ -21,5 +21,7 @@ export class EventsPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad EventsPage');
   }
-
+  goToEventDetail(){
+    this.navCtrl.push('EventDetailPage');
+  }
 }

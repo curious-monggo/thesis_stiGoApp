@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the LoginPage page.
+ * Generated class for the EventDetailPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,24 +10,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-login',
-  templateUrl: 'login.html',
+  selector: 'page-event-detail',
+  templateUrl: 'event-detail.html',
 })
-export class LoginPage {
+export class EventDetailPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
-  }
-  googleSignIn(){
-    console.log('Google Sign in');
-    this.navCtrl.push('RegistrationCodePage');
+    console.log('ionViewDidLoad EventDetailPage');
   }
 
-  facebookSignIn(){
-    console.log('Facebook Sign in');
+  openAttendancePage(){
+    this.navCtrl.push('AttendancePage');
   }
 
 }

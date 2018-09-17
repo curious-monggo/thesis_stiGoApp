@@ -18,6 +18,7 @@ import { StrandProvider } from '../providers/strand/strand';
 
 //browser
 import { InAppBrowser } from '@ionic-native/in-app-browser'
+import { RegistrationCodeProvider } from '../providers/registration-code/registration-code';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyD6Rg5ux3fQi3OrwrWCHAEipaxrk3hB7EY",
@@ -54,7 +55,8 @@ export const firebaseConfig = {
     NewsProvider,
     CourseProvider,
     StrandProvider,
-    InAppBrowser
+    InAppBrowser,
+    RegistrationCodeProvider
   ]
 })
 export class AppModule {}
