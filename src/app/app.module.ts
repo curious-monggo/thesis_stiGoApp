@@ -19,6 +19,17 @@ import { StrandProvider } from '../providers/strand/strand';
 //browser
 import { InAppBrowser } from '@ionic-native/in-app-browser'
 import { RegistrationCodeProvider } from '../providers/registration-code/registration-code';
+import { EventProvider } from '../providers/event/event';
+import { HotspotProvider } from '../providers/hotspot/hotspot';
+import { AttendanceProvider } from '../providers/attendance/attendance';
+
+import { Facebook } from '@ionic-native/facebook';
+import { GooglePlus } from '@ionic-native/google-plus';
+import { Hotspot } from '@ionic-native/hotspot';
+import { AuthProvider } from '../providers/auth/auth';
+
+//hotspot
+//import { Hotspot } from '@ionic-native/hotspot';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyD6Rg5ux3fQi3OrwrWCHAEipaxrk3hB7EY",
@@ -51,12 +62,24 @@ export const firebaseConfig = {
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    //database
     AngularFirestore,
+    //data
     NewsProvider,
     CourseProvider,
     StrandProvider,
+    RegistrationCodeProvider,
+    EventProvider,
+    HotspotProvider,
+    AttendanceProvider,
+    //to be removed
     InAppBrowser,
-    RegistrationCodeProvider
+    //device function
+    Hotspot,
+    //signin
+    Facebook,
+    GooglePlus,
+    AuthProvider
   ]
 })
 export class AppModule {}

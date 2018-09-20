@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { AuthProvider } from './../../providers/auth/auth';
+import { AngularFireAuth } from 'angularfire2/auth';
+
 /**
  * Generated class for the LoginPage page.
  *
@@ -15,7 +18,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  displayName;
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    private afAuth: AngularFireAuth,
+    private authProvider: AuthProvider
+  ) {
+      this.afAuth.authState.subscribe(user =>{
+        if(user){
+          this.navCtrl.setRoot('TabsPage');
+        } else {
+          console.log('Error on login, stay there');
+        }
+      })
   }
 
   ionViewDidLoad() {
@@ -23,11 +39,17 @@ export class LoginPage {
   }
   googleSignIn(){
     console.log('Google Sign in');
-    this.navCtrl.push('RegistrationCodePage');
+    this.authProvider.signInWithGoogle();
   }
 
   facebookSignIn(){
     console.log('Facebook Sign in');
+    this.authProvider.signInWithFacebook();
   }
-
+  goToHome(){
+    this.navCtrl.setRoot('TabsPage');
+  }
+  // signOut(){
+  //   this.authProvider.signOut();
+  // }
 }

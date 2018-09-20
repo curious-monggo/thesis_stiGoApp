@@ -1,6 +1,14 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+//providers
+import { EventProvider } from './../../providers/event/event';
+
+//model
+import { Event } from './../../models/event/event';
+
+import { AngularFireAuth } from 'angularfire2/auth';
+
 /**
  * Generated class for the EventsPage page.
  *
@@ -14,12 +22,29 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'events.html',
 })
 export class EventsPage {
+  eventCollection:Event[];
+  displayName;
+  photo_url;
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    private eventProvider: EventProvider,
+    private afAuth: AngularFireAuth
+    ) {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
+  goToAccountPage(){
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EventsPage');
+    this.getLatestEventCollection();
+  }
+  getLatestEventCollection(){
+    this.eventProvider.getLatestEventCollection().subscribe(eventCollection => {
+      this.eventCollection = eventCollection;
+      console.log(eventCollection);
+    });
   }
   goToEventDetail(){
     this.navCtrl.push('EventDetailPage');

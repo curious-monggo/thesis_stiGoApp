@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+
+import { AngularFireAuth } from 'angularfire2/auth';
 /**
  * Generated class for the StorePage page.
  *
@@ -14,10 +16,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'store.html',
 })
 export class StorePage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  displayName;
+  photo_url;
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    private afAuth: AngularFireAuth
+    ) {
   }
+  goToAccountPage(){
 
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad StorePage');
   }

@@ -10,6 +10,9 @@ import { Program } from './../../models/program/program';
 
 //browser
 import { InAppBrowser, InAppBrowserOptions } from '@ionic-native/in-app-browser';
+
+
+import { AngularFireAuth } from 'angularfire2/auth';
 /**
  * Generated class for the ProgramsPage page.
  *
@@ -23,7 +26,8 @@ import { InAppBrowser, InAppBrowserOptions } from '@ionic-native/in-app-browser'
   templateUrl: 'programs.html',
 })
 export class ProgramsPage {
-
+  displayName;
+  photo_url;
   programType;
   courseCollection:Program[];
   strandCollection:Program[];
@@ -33,7 +37,8 @@ export class ProgramsPage {
     public navParams: NavParams,
     private courseProvider: CourseProvider,
     private strandProvider: StrandProvider,
-    private inAppBrowser: InAppBrowser
+    private inAppBrowser: InAppBrowser,
+    private afAuth: AngularFireAuth
     ) {
       this.programType = 'Courses';
       if(this.programType == 'Courses'){
@@ -43,7 +48,8 @@ export class ProgramsPage {
         this.getStrandCollection();
       }
   }
-
+  goToAccountPage(){
+  }
   ionViewDidLoad() {
     this.programType = 'Courses';
     if(this.programType == 'Courses'){

@@ -7,6 +7,9 @@ import { NewsProvider } from './../../providers/news/news';
 
 //model
 import { News } from './../../models/news/news';
+
+
+import { AngularFireAuth } from 'angularfire2/auth';
 /**
  * Generated class for the NewsPage page.
  *
@@ -23,13 +26,19 @@ export class NewsPage {
   newsCollection:News[];
   newsDocumentId;
 
+  displayName;
+  photo_url;
+
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    private newsProvider: NewsProvider
+    private newsProvider: NewsProvider,
+    private afAuth: AngularFireAuth
     ) {
   }
 
+  goToAccountPage(){
+  }
   ionViewDidLoad() {
     this.getNewsCollection();
   }

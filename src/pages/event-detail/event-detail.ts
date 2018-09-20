@@ -1,5 +1,10 @@
+import { AttendanceProvider } from './../../providers/attendance/attendance';
+
+
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+
+import { HotspotProvider } from './../../providers/hotspot/hotspot';
 
 /**
  * Generated class for the EventDetailPage page.
@@ -15,7 +20,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class EventDetailPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController,
+     public navParams: NavParams, 
+     private hotspotProvider:HotspotProvider,
+     private toastCtrl:ToastController,
+     private attendanceProvider: AttendanceProvider){
   }
 
   ionViewDidLoad() {
@@ -24,6 +34,23 @@ export class EventDetailPage {
 
   openAttendancePage(){
     this.navCtrl.push('AttendancePage');
+  }
+
+  hostAttendance(){
+    this.hotspotProvider.createHotspot('EventName', 'hashedPassword');
+  }
+  signForAttendance(){
+    this.hotspotProvider.connectToHotspot('EventName', 'hashedPassword');
+    // this.attendanceProvider.signForAttendance();
+    //this.hotspotProvider.removeWifiNetwork('EventName');
+  }
+  toast(message){
+    let toast = this.toastCtrl.create({
+      message:message,
+      position:'bottom',
+      duration: 3000
+    });
+    toast.present();
   }
 
 }

@@ -1,4 +1,4 @@
-export interface News {
+export interface RegistrationCode {
     id?:string;
     news_photo_url?:string;
     news_photo_name?:string;
@@ -7,7 +7,6 @@ export interface News {
     news_content?:string;
 
     news_timestamp_post_created?:any;
-    news_timestamp_post_last_updated?:any;
 
     news_author_id?:string;
     news_author_name?:string;

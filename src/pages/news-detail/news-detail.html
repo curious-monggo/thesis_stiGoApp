@@ -17,7 +17,8 @@
   <div *ngIf="newsDocument">
       <img class="img" src="{{ newsDocument.news_photo_url }}" />
       <div padding>
-        <p class="date" >{{ newsDocument.news_timestamp_post_created?.toDate() | date: 'medium'  }}</p>
+        <p class="date" *ngIf="newsDocument.news_timestamp_post_created">Date created: {{ newsDocument.news_timestamp_post_created?.toDate() | date: 'medium'  }}</p>
+        <p class="date" *ngIf="newsDocument.news_timestamp_post_last_updated">Date last updated: {{ newsDocument.news_timestamp_post_last_updated?.toDate() | date: 'medium'  }}</p>
         <h1 class="title">{{ newsDocument.news_title }}</h1>
         <p class="content">{{ newsDocument.news_content }}</p>
       </div>
